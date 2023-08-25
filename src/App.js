@@ -1,23 +1,26 @@
-import logo from './logo.svg';
-import './App.css';
+// App.js
+import React from 'react';
+import { Provider } from 'react-redux';
+import store from './store';
+import Header from './components/Header'; // Importa tu componente de cabecera
+import MainContent from './components/MainContent'; // Importa tu componente de contenido principal 
+import {Principalsection} from './components/Principal-section';
+import './App.css'; 
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+      
       </header>
+      
+      <Provider store={store}>
+      <div>
+        <Principalsection/>
+        <Header />
+        <MainContent />
+      </div>
+    </Provider>
     </div>
   );
 }
